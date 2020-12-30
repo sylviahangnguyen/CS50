@@ -1,6 +1,6 @@
 ## Problem Set 1: C
 
-### Hello
+##### Hello
 This is a simple "Hello, world!" print.
 
 ### Mario (less & more)

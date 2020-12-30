@@ -15,9 +15,9 @@
 <h2 align="center">
   Introduction to Computer Science
 </h2>
-<a align="center">
+<p align="center">
   <img src="static/banner.PNG" alt="Logo" >
-</a>
+</p>
 <h3 align="center">FINAL PROJECT</h3>
 
 <p align="center">

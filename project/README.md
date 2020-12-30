@@ -9,17 +9,18 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
+<h1 align="center">
   CS50x
-  <p align="center">
+</h1>
+<h2 align="center">
   Introduction to Computer Science
-  <img src="static/banner.PNG" alt="Logo" >
+</h2>
 
-  <h3 align="center">FINAL PROJECT</h3>
+<img align="center" src="static/banner.PNG" alt="Logo" >
+<h3 align="center">FINAL PROJECT</h3>
 
-  <p align="center">
-   This Final Project is completed as a part of CS50x - Introduction to Computer Science, Harvard University. It's a web application named *“Self-love Tracker”*
-  </p>
+<p align="center">
+ This Final Project is completed as a part of CS50x - Introduction to Computer Science, Harvard University. It's a web application named *“Self-love Tracker”*
 </p>
 
 ## About this course
@@ -86,9 +87,10 @@ $ flask run
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+## Contributing 
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+(to be updated)
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/Self-lofe-Tracker`)
@@ -109,3 +111,20 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Hang Nguyen - hang.nguyen1@ucdconnect.ie
 
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/fallingstar3107/Amazon-SageMaker-Capstone-Project.svg?style=flat-square
+[contributors-url]: https://github.com/fallingstar3107/Amazon-SageMaker-Capstone-Project/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/fallingstar3107/Amazon-SageMaker-Capstone-Project.svg?style=flat-square
+[forks-url]: https://github.com/fallingstar3107/Amazon-SageMaker-Capstone-Project/network/members
+[stars-shield]: https://img.shields.io/github/stars/fallingstar3107/Amazon-SageMaker-Capstone-Project.svg?style=flat-square
+[stars-url]: https://github.com/fallingstar3107/Amazon-SageMaker-Capstone-Project/stargazers
+[issues-shield]: https://img.shields.io/github/issues/fallingstar3107/Amazon-SageMaker-Capstone-Project.svg?style=flat-square
+[issues-url]: https://github.com/fallingstar3107/Amazon-SageMaker-Capstone-Project/issues
+[license-shield]: https://img.shields.io/github/license/fallingstar3107/Amazon-SageMaker-Capstone-Project.svg?style=flat-square
+[license-url]: https://github.com/fallingstar3107/Amazon-SageMaker-Capstone-Project/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/hang-nguyen-analytics/
+[product-screenshot]: images/screenshot.png

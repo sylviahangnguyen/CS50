@@ -1,0 +1,24 @@
+Print an error message when the number of argvs is incorrect
+
+Open the CSV file
+Read its contents into memory
+
+Set the 1st row of the CSV file to the column names, except the 1st cell (STRs)
+
+Open the DNA sequence_file
+Read its contents into memory, replace the last "\n" to "" (null)
+Initialise the counted list, storing the longest repeated chain of each STR
+Loop all STRs
+    create a list of repeated pattern by regular expression (method: .findall, re: (fr'(?:{})+') )
+    try find the longest element in the above list
+    except ValueError => exit programme
+    count the number of time STR appeared in that longest chain
+
+read the data_file again
+for each row (person)
+    Initialise and Append to the count list, storing all the STRs length of each person
+    if the no. of each STR repeated in count list (from database) equal to that in counted list (from sequence)
+        print the person name
+Otherwise, print "No match"
+
+Close data_file and sequence_file

@@ -1,0 +1,23 @@
+//Prompt user for the change in dollar, which is a positive float
+Declare the dollar change 
+Ask for the change once
+  Check the condition: The input is not a float and <= 0 
+    TRUE => Ask for the change "again"
+    FALSE => print the smallest number of coins needed  
+    
+    Convert dollars into cents, and round it to the nearest cent integer
+    Declare the initial coin number
+      While the cent change is more or equal to 25 (quarter), repeat
+        Decrease cent change by 25
+        Increase coin numbers by 1
+      While the cent change is more or equal to 10 (dime), repeat
+        Decrease cent change by 10
+        Increase coin numbers by 1
+      While the cent change is more or equal to 5 (quarter), repeat
+        Decrease cent change by 5
+        Increase coin numbers by 1
+      While the cent change is more or equal to 1 (quarter), repeat
+        Decrease cent change by 1
+        Increase coin numbers by 1
+     Print the total coin number needed, and create a new line
+     

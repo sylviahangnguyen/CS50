@@ -1,0 +1,40 @@
+Set Max number of candidates as a constant
+
+Define the type candidate with 2 attributes: name and votes
+
+Initialize the array of candidates
+
+Initialize the number of candidates
+
+MAIN FUNCTION, pass command line arguments
+    Check for invalid usage
+    If the user forgot to provide the candidate list
+        Print warning message
+        Exit
+    Else, count the number of candidates
+    If the number of candidates > the Max number of candidates
+        Print warning message
+        Exit
+
+    Loop over all candidates
+        Set the name attribute in the candidate type for the candidate based on the argument
+        Set the votes attribute in the candidate type for the candidate to 0
+
+    Get the number of voters
+
+    Loop over all voters
+        Get the name in the vote
+        Check for invalid vote:
+            If the name in the vote appears in the candidate list
+                Update vote totals given a new vote
+            If the name in the vote doesn't appear in the candidate list
+                Print warning message
+
+    Display winner of election
+        Initialize the maximum vote count = 0
+        Loop over all candidates
+            If the current maximum vote count < ith candidate's vote count
+                Set the new max vote count = ith candidate's vote count
+        Loop over all candidates
+            If that candidate has vote count = the maximum vote count
+                Print that candidate's name

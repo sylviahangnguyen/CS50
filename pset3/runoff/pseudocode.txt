@@ -1,0 +1,103 @@
+Define
+    Max voters (100)
+    and Max candidates (9)
+
+Initialise
+    the preferences matrix, in which
+        rows correspond to voters,
+        columns correspond to ranks,
+        and each integer value corresponds to a particular candidate
+
+Define
+    the consolidated type named "candidate", which has 3 atttributes:
+        name,
+        vote count,
+        eliminated status
+
+Initialise
+    the array of candidates as newly created "candidate" type
+
+Initialise
+    the number of voters
+    and the number of candidates
+
+MAIN FUNTION
+    Check if the user forget to give the command line arguments
+        Print warning message
+        Exit the program
+
+    Get the number of given candidates
+    Check if the the number of given candidates greater than the Max candidates (9)
+        Print warning message
+        Exit the program
+
+    Otherwise, set the value for 3 attributes in the candidate array:
+        name, based on command line arguments
+        votes = 0
+        eliminated = false
+
+    Get the number of voters
+    Check if the the number of voter greater than the Max voters (100)
+        Print warning message
+        Exit the program
+
+    Keep querying for votes until the given name is invalid
+    Loop all voters
+        Loop all ranks
+            Query the candidate name
+            Loop all candidates
+            If the given name similar to the current candidates name in the loop
+                Update the preferences array based on the given candidate index
+    Otherwise (FALSE),
+        Print warning message
+        Exit the program
+
+    Keep running until winner exists
+        Calculate votes given 1st non-eliminated candidates
+            Loop all voters
+                Firstly, consider the 1st rank candidate
+                Get the candidate in the 1st rank
+                While that is eliminated, move to the next
+                    Increase the rank by 1
+                    Get the candidate in the new rank
+                Otherwise, increase the 1st non-eliminated candidate votes by 1
+
+        Check if there's any candidate wins
+            Loops all candidates
+                If there's any non-eliminated candidate(s) who has
+                the no. of votes which is greater than half of total votes
+                    Print their names
+                    Exit the program
+            Otherwise, keep running
+
+        Return the minimum number of votes any remaining candidate has
+            Set the 1st candidate to take the min vote value
+                While that candidate is eliminated,
+                    Move to the next
+            Set the min value = the no. of votes of the 1st non-eliminated candidate to date
+            Loop from the next candidate onwards
+                If the min value > the current value in the loop
+                    Update the min value based on the current value in the loop
+            Return min value
+
+        Check if the election is tied (everyone has the same vote number)
+            Initialise the no. of uneliminated candidates to date
+            Initialise the no. of votes of uneliminated candidates to date
+            Loop all candidates
+                If the current candidate is non-eliminated
+                    Increase the no. of uneliminated candidates to date by 1
+                    Update the no. of votes of uneliminated candidates to date
+            If all non-eliminated candidates to date have the same vote number as the min value
+                Loop all candidates
+                    If the current candidate is non-eliminated
+                        Print the candidate
+            Otherwise, keep running
+
+        Eliminate anyone with minimum number of votes
+            Loop all candidates
+                Find those who haven't been eliminated and have the vote number = min value
+                    Eliminate them
+
+        After one elimination, reset vote counts back to zero
+            Loop all candidates
+                Set the vote attribute to 0

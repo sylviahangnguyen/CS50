@@ -1,0 +1,57 @@
+Convert image to grayscale
+    loop all rows of pixels
+        loop all pixels in a row
+            shoten the name of each pointer to rgbtRed, rgbtGreen, rgbtBlue of each pixel
+
+            calculate the average of pixel's rgbtRed, rgbtGreen and rgbtBlue = Grey
+            store it as a float
+            change the float type to nearest integer
+
+            set the value of each colour in each pixel to previously calculated Grey value
+
+Convert image to sepia
+    loop all rows of pixels
+        loop all pixels in a row
+            shoten the name of each pointer to rgbtRed, rgbtGreen, rgbtBlue of each pixel
+
+            calculate the new value of pixel's rgbtRed, rgbtGreen and rgbtBlue
+            store them as floats sepiaRed, sepiaGreen, sepiaBlue */
+
+            convert the type of sepiaRed, sepiaGreen and sepiaBlue from float to integer
+            take the min value between that and 255 (the max possible hexadecimal value for RGB)
+            and set the value of each colour in each pixel to the sepia value
+
+Reflect image horizontally
+    loop all rows of pixels
+        if the no. of pixels in a row is an even number
+            loop through the 1st half of all pixels in that row
+                swap the pixel in 1st half to the symetrical one in the 2nd half
+
+        if the no. of pixels in a row is an odd number
+            loop through the 1st half of all pixels in that row, except the middle one
+                swap the pixel in 1st half to the symetrical one in the 2nd half
+
+Blur image
+    declare a new bitmap to store the blur pixels
+    loop all rows of pixels
+        loop all pixels in a row
+            initialise the sum of color value in both the current pixel and the surrounding/adjacent pixels to 0
+            initialise the total number of the surrounding/adjacent pixels plus the current pixel to 0
+
+            calculate the sum and count of color value by:
+            loop 3 rows of pixels
+                loop 3 pixels in a row
+                    allocate 3 BYTE size of memory for 3 color value in each pixel
+                    if the current pixel is not existed
+                        set the color value to 0
+                    if the current pixel is existed
+                        put the color value into the memory assigned
+                        increment the count by 1
+                    increment sum by the color value of the current pixel
+                    free the dynamic memory allocated
+            create *blur_red (*blur_green/*blur_blue) is the Red (Green/Blue) value in each pixel
+            set the blur value to the rounded average color value of adjacent pixel and the current one
+
+    loop all rows of pixels
+        loop all pixels in a row
+            copy the value from the blur image to the current image

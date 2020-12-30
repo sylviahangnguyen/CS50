@@ -1,0 +1,14 @@
+//Prompt user for the height (n), which is a positive integer
+Declare n 
+Ask for the height once
+  Check the condition: The input is not an integer or <1 or >8
+    TRUE => Ask for the height "again"
+    FALSE => print half pyramid
+   
+//Print half pyramid
+  Make i rows (i=n), by 
+    Make j spaces, by
+      repeating j times " "
+    Make k hashs, by
+      repeating k times "#"
+    repeating i times "\n"

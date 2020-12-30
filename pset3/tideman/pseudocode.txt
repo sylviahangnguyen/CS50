@@ -1,0 +1,111 @@
+Define
+    Max candidates (9)
+
+Initialise
+    preferences[i][j] is number of voters who prefer i over j
+
+Initialise
+    locked[i][j] means i is locked in over j
+
+Define
+    the consolidated type named "pair", with 2 attributes:
+        winner
+        loser
+
+Initialise
+    the array of candidate's names as string type
+    the array of candidate's pairs as newly created "pair" type
+
+Initialise
+    the number of pairs
+    and the number of candidates
+
+MAIN FUNCTION
+    Check if the user forget to give the command line arguments
+        Print warning message
+        Exit the program
+
+    Get the number of given candidates
+    Check if the the number of given candidates greater than the Max candidates (9)
+        Print warning message
+        Exit the program
+
+    Loop all candidates
+        Set the index each candidate in the candidate array
+
+    Clear graph of locked in pairs by:
+    Loop alls rows
+        Loop alls columns
+            Set the value in locked array to False
+
+    Ask users for the number of voters
+    Loop all voters
+        Declare rank array to store each voter's preferences
+        Ask each voter for candidate name in each rank
+        If the candidate name is not in the candidates list (Linear-search function)
+            Print the warning message
+            Exit the programe
+        Otherwise, for each rank, update the candidate in the rank array
+
+        Update the preferences array by:
+            Loop all candidate in each rank array
+                Loop all candidate after the previous one in each rank array
+                    Increment the value (in of preferences array)
+                     of the 1st over the 2nd by 1
+
+Record pairs of candidates where one is preferred over the other
+    Loop all rows in preferences array
+        Loop all columns in preferences array
+            If 2 candiadtes has one preference greater than the other
+                Update the winner in pairs array
+                Update the loser in pairs array
+                Increment the pair count in pairs array by 1
+
+Sort pairs in decreasing order by strength of victory (highest first)
+    Loop all pairs in pairs array
+        Find the victory (no. of voters won) of the winner
+        (1) Bubble Sort
+            Set the total no. of pairs to sort
+            Set the swap counter to a value different from 0
+            Keep doing until no swap are done
+                Set swap_counter again to 0
+                Loop over no. of pairs to sort
+                    if victory of winner in the former < the later
+                        Swap victory values in victories array
+                        Swap pairs in pairs array
+                        Increment swap counter by 1 (after successfully swapped 1)
+                Decrement no. of pairs to sort by 1 (after successfully sorted 1)
+
+        (2) Selection Sort
+            For each pair in the list pairs to sort
+                Assume the first one in that list has the maximum victory
+                by set the maximum index
+                For each pair onwards in that list
+                    If the victory of the later pair is greater than the first one
+                        Set the maximum index to the current pair
+                Swap victory values between the pair with maximum index and the 1st one to sort
+                Swap between the pair with maximum index and the 1st one to sort
+
+        (3) Insertion Sort
+            For each pair in pairs array
+                Check all the pairs before the current pair
+                if the previous pair has smaller vitory than the current pair
+                    Move both the victory and those pairs backward by 1
+                Insert the current pair to the place before all the moved pair
+
+        (4) Merge Sort
+
+Lock pairs into the candidate graph in order, without creating cycles
+    Loop alls pairs
+        Check if the edge (pair) wouldn't create a cycle:
+                when the source node is also the end node of a stack (trail) => cycle => do nothing
+                if the source node is not yet the end node of a stack (trail)
+                    check if we could add one more node to the stack (trail), that added node become new end node
+                        now the stack (trail) is longer, again check if the source node = new end node
+                            if true, a cycle is created within the graph => do nothing
+                Otherwise, there's no cylce =>include the new edge (pair) to the graph
+
+
+Print the winner of the election
+    Loop all candidates
+        calculate the total number of nodes which points to node i

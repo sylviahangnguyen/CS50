@@ -1,0 +1,53 @@
+// INCLUDE THE NEEDED LIBRARIES
+
+// INITIALISE THE SUB FUNCTIONS BEFORE THE MAIN FUNCTION
+initialise the 1st sub function to prompt the string (input)
+initialise the 2nd sub function to count the number of letters
+initialise the 3rd sub function to count the number of words
+initialise the 4th sub function to count the number of sentences
+initialise the 5th sub function to calculate the grade
+
+MAIN FUNCTION
+    // GET STRING
+    call the 1st sub function to get the string
+
+    // COUNT THE NO. OF LETTER, WORD AND SENTENCE TO CALCULATE THE INDEX NUMBER
+    call other sub functions to pass the index
+
+    // PRINT THE GRADE
+    If a grade is equivalent to or greater than a senior undergraduate reading level
+        Print "Grade 16+"
+    Else if a grade is less than 1
+        Print "Before Grade 1"
+    Else
+        Print the actual grade
+
+GETSTRING FUNCTION
+    Prompt the string (input)
+        While getting a null input, prompt again
+    return the result
+
+COUNTLETTER FUNCTION
+    For loop: set the no. of iteration equal to the no. of char in string
+        if the char is a alphabetic letter
+            increment the letter total count by 1
+    return the result
+
+COUNTWORD FUNCTION
+    For loop: set the no. of iteration equal to the no. of char in string
+        if the char is a blank space
+            increment the word total count by 1
+    increment the word total count by 1, as the total no. of blank space + 1 = the total no. of word
+    return the result
+
+COUNTSENTENCE FUNCTION
+    For loop: set the no. of iteration equal to the no. of char in string
+        if encounter a puntuation in  {".", "!", "?"}
+            increment the sentence total count by 1
+    return the result
+
+CALCULATE-GRADE FUNCTION
+    calculate L (no. of letter / no. of word * 100)
+    calculate S (no. of sentence / no. of word * 100)
+    calculate index (0.0588 * L - 0.296 * S - 15.8)
+    return index

@@ -1,0 +1,24 @@
+Detect edges
+    declare a new bitmap to store the blur pixels
+    declare 3x3 Gx and Gy matrixes to generate the edges images
+
+    loop all rows of pixels
+        loop all pixels in a row
+            initialise the new values Gx_red, Gx_green, Gx_blue of each pixel
+            initialise the new values Gy_red, Gy_green, Gy_blue of each pixel
+            calculate the Gx_red, Gy_red, ... of surrounding pixels
+            loop 3 rows of pixels
+                loop 3 pixels in a row
+                    allocate 3 BYTE size of memory for 3 color value in each pixel
+                    if the current pixel is not existed
+                        set the color value to 0
+                    else if the current pixel is existed
+                        put the color value into the memory assigned
+                    add the current pixel, after multiplying by the Gx (Gy) parameter to the Gx, Gy sum
+                    free the dynamic memory allocated
+            Set *edge_red (*edge_green/*edge_blue) is the Red (Green/Blue) value in each pixel
+            set the edge value to the rounded average color value of adjacent pixel and the current one
+
+    loop all rows of pixels
+        loop all pixels in a row
+            copy the value from the edge image to the current image

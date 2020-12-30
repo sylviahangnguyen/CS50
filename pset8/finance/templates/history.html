@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{transaction.symbol}}</td>
+                    {% if transaction.amount_buy == None %}
+                        <td>-{{transaction.amount_sell}}</td>
+                    {% else %}
+                        <td>{{transaction.amount_buy}}</td>
+                    {% endif %}
+                    <td>{{transaction.price | usd}}</td>
+                    <td>{{transaction.datetime}}</td>
+                </tr>
+            {% endfor %}
+    </table>
+
+{% endblock %}

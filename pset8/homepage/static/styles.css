@@ -1,0 +1,36 @@
+body
+{
+     background-image: url("paper.gif");
+    background-color: #000000;
+    color: Gainsboro;
+}
+.centered
+{
+    text-align: center;
+
+}
+
+.top
+{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Georgia';
+    font-weight: 600;
+
+}
+
+.narrative
+{
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Georgia';
+
+}
+
+.bottom
+{
+    font-size: 14px;
+    text-align: center;
+
+}
+

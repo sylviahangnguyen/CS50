@@ -1,0 +1,64 @@
+Initialise the 1stsub function to count the number of digits before the main function
+Initialise the 2nd sub function to check the Luhn sum
+
+Main funtion
+    // PROMPT THE CARD NUMBER (INPUT)
+    Initialise the type of card (from 13 to 16 digits)
+      Get the card number from user
+    Avoid the negative long and 0
+
+    // GET THE DIGIT COUNT TO CHECK FOR THE CARD'S LENGTH => CARD'S TYPE
+    Call the 1st sub function to count the number of digits from the card number
+
+    // GET THE 1ST AND 2ND DIGIT CHECK FOR THE CARD'S TYPE
+    Get the power needed to extract the first digit
+    Get the 1st digit by round down the 1st quotient
+    Get the 2nd digit by round down the 2nd quotient
+
+    // GET THE LUHN SUM
+    Call the 2nd sub function to check the Luhn sum
+
+    // CHECK THE INVALID LUHN SUM
+    If the sum's last digit is diff from 0
+      INVALID
+    // CHECK THE CARD'S TYPE
+    Else if AMEX conditions are met
+      AMEX
+    Else if MASTER conditions are met
+      MASTER
+    Else if VISA conditions are met
+      VISA
+    // THE UNQUALIFIED CARD'S TYPE
+    Else
+      INVALID
+
+FUNCTION: GET THE DIGIT COUNT TO CHECK FOR THE CARD'S LENGTH => CARD'S TYPE
+  Initialise the length (the number of digits) of the card number
+    remove/pop the last digit from the card number
+    increment the length by 1, as we just counted one last digit
+  Return the length as an integer
+}
+
+FUNCTION: GET THE LUHN SUM
+Take argument from input, function digit count above and calculated power
+    // EXTRACT ALL THE DIGIT FROM CARD NUMBER
+    Initialise the list of card digits
+    Until all the digits are counted
+       Set iteration from 0 to len-1 (or 1 to len)
+        Get the 1st digit
+        Remove/pop that 1st digit
+        Decrease the power by 10 times
+
+    // CALCULATE THE LUHN SUM
+    Initialise the Luhn sum of digits
+
+    Set iteration for every other index from the 2nd-to-last digit backwards
+    If the product of 2 times the digit has only 1 digit (or 2*digit < 10)
+      Add the digit to the Luhn sum
+    Else, if the product of 2 times the digit has 2 digit (or 2*digit >= 10)
+      Extract the 1st digit of that product
+      Extract the 2nd digit of that product
+      Add the above 1st and 2nd digit of the product to the Luhn sum
+
+    Set iteration for every other index from the last digit backwards
+      Add the digit to the Luhn sum

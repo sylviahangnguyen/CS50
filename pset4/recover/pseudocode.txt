@@ -1,0 +1,33 @@
+Make sure that the user give only 1 command argument
+
+Open input file
+If input file cannot be read, exit the program
+
+Keep track of how many JPEGs read by initialise the counter count_jpeg
+
+Allocate 8 bytes for outfile name
+If there's not enough available memory, exit the program
+
+Declare the outfile (to keep opening it to write several blocks)
+
+Allocate 512 bytes for each block to read
+
+while the total bytes read is still 512 (no null bytes)
+    Check first four bytes in a 512-bytes block
+    if it's JPEG first 4 bytes pattern
+        set the new outfile name
+
+        If it's the first image
+            open outfile
+            write to outfile
+        Otherwise,
+            close the last outfile
+            open new outfile
+            write to outfile
+        increment the number of images read by 1
+    else
+        if the 1st image has been found, and the current block is not the 1st block of an image
+            continue to write into the opening outfile
+        if the 1st image has not been found, and the current block is not the 1st block of an image, do nothing
+
+Close infile and outfile

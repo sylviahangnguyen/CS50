@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Read
+{% endblock %}
+
+{% block main %}
+    {% if length == 0 or length == None%}
+        <h4 style="color:#00bfb6">Sorry, no affirmation found.</h4>
+    {% else %}
+
+        {% for result in results %}
+            <div class="box sb1">
+                {{result.affirmations}}
+
+                <form style="text-align:right" action="/delete" method="post">
+                    <br><i style="font-family: Georgia">{{ result.formatted_date }}</i>
+                    <input name="id" type="hidden" value="{{ result.id }}">
+                    <button class="btn" href="/delete"
+                    onclick="return confirm('Are you sure you want to delete this affirmation?');"><i class="fa fa-trash"></i></button>
+                </form>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
+

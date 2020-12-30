@@ -1,0 +1,13 @@
+os
+cs50
+Flask, Markup, flash, jsonify, redirect, render_template, request, session
+flask_session
+tempfile
+werkzeug.exceptions
+werkzeug.security
+datetime
+wordcloud
+matplotlib.pyplot
+PIL
+
+

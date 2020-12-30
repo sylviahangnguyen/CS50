@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolios
+{% endblock %}
+
+{% block main %}
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <div class="parent">
+                    <div class="big-child">
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Shares</th>
+                        <th>Price</th>
+                        <th>TOTAL</th>
+                    </div>
+                    <div class="small-child"></div>
+                    <div class="small-child"></div>
+                </div>
+            </tr>
+        </thead>
+        <tbody>
+            {% for portfolio in portfolios %}
+                <tr>
+                    <div class="parent">
+                        <div class="big-child">
+                            <td>{{portfolio.symbol}}</td>
+                            <td>{{portfolio.name}}</td>
+                            <td>{{portfolio.shares}}</td>
+                            <td>{{portfolio.price | usd}}</td>
+                            <td>{{portfolio.total_price | usd}}</td>
+                        </div>
+
+                        <div class="small-child">
+                            <td>
+                                <form action="/buy" method="post">
+                                    <input name="symbol" type="hidden" value="{{ portfolio.symbol }}">
+                                    <input autocomplete="off" class="form-control" name="shares" placeholder="Shares" type="number" style="width:40%">
+                                    <button class="btn btn-primary" type="submit">Buy</button>
+                                </form>
+                            </td>
+                        </div>
+
+                        <div class="small-child">
+                            <td>
+                                <form action="/sell" method="post">
+                                    <input name="symbol" type="hidden" value="{{ portfolio.symbol }}">
+                                    <input autocomplete="off" class="form-control" name="shares" placeholder="Shares" type="number" style="width:40%">
+                                    <button class="btn btn-primary" type="submit">Sell</button>
+                                </form>
+                            </td>
+                        </div>
+                    </div>
+                </tr>
+            {% endfor %}
+
+            <tr>
+                <div class="parent">
+                    <div class="big-child">
+                        <td>CASH</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>{{remaining_cash | usd}}</td>
+                    </div>
+                    <div class="small-child"></div>
+                    <div class="small-child"></div>
+                </div>
+            </tr>
+        <tfoot style="font-weight: bold">
+            <tr>
+                <div class="parent">
+                    <div class="big-child">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th >{{asset | usd}}</th>
+                    </div>
+                    <div class="small-child"></div>
+                    <div class="small-child"></div>
+                </div>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}

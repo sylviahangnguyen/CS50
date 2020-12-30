@@ -1,0 +1,32 @@
+Get the key by pass one command line argument to the main function
+
+    Validate the key
+    If there're more than 1 argument or no argument at all
+        Print the warning "Usage: ./substitution KEY"
+        Exit the program
+    If the key length is not equal to 26
+        Print the warning "Key must contain 26 characters"
+        Exit the program
+    If there's one or some digit characters
+        Print the warning "Key must only contain alphabetic characters"
+        Exit the program
+    If there're one or some repeated characters
+        Print the warning "Key must not contain repeated characters"
+        Exit the program
+
+    Get plain text
+        Ask the user for the plain text
+        Keep asking if the user doesn't provide any text
+
+    Encipher
+        Get the plain text length
+        Allocate the memory for the cipher text ( the same length as the plain text)
+
+        Get the Alphabetic Key table
+        For each char in plain text
+            If the char is alphabetic
+                Cipher the char based on the Key table
+            Else the char is not alphabetic
+                Keep the char unchanged
+
+    Print out the cipher text as a string.

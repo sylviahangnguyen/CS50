@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+
+
+    <form action="/search" method="post" id="form-shower">
+
+        <div class="form-group">
+            <select name="select" class="form-control" id="select">
+                <option value="" selected="selected" disabled>Search</option>
+                <option value="form_all">All</option>
+                <option value="form_date">Search by date</option>
+                <option value="form_tags">Search by tags</option>
+                <option value="form_word">Search by word in text</option>
+            </select>
+        </div>
+
+        <button name="form_all" id="form_all" class="btn btn-primary" type="submit" style="display:none">Search</button>
+
+        <div class="form-group" name="form_date" id="form_date" style="display:none">
+            <input class="form-control" type="date" id="date" name="date">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+
+
+        <div class="form-group" name="form_tags" id="form_tags" style="display:none">
+            <input maxlength="15" autofocus class="form-control" name="tags" placeholder="tag1, tag2, tag3, ..." type="search">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+
+
+        <div class="form-group" name="form_word" id="form_word" style="display:none">
+            <input maxlength="15" autofocus class="form-control" name="word" placeholder="word" type="search">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+
+
+    </form>
+
+    <script>
+    $("#select").on("change", function() {
+        $("#" + $(this).val()).show().siblings().hide();
+    })
+    </script>
+
+{% endblock %}

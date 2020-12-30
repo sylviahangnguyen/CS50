@@ -1,0 +1,73 @@
+Implements a dictionary's functionality
+
+Struct new type called node, with 2 properties: word and *next
+
+Set the constant number of buckets in hash table
+
+Declare the hash table of type node
+
+Check() Function: Returns true if word is in dictionary else false
+    Hash word to find the bucket
+
+    Inside the bucket, search the linked list by:
+    Create an temporary node which points to the first node in linked list
+    Keep setting the temporary node to the next node if the next node is not null
+        Check if the word is in the node, return true and stop
+        Else, continue
+
+Hash() function: Taking input as the 1st 3 letters in the word, returns an integer
+    count the number of letters in the word
+    declare the value for the output bucket
+
+    calculate the index of bucket based on the first 3 letters in words (using ASCII, uppercase, power of 26)
+    with 3 cases:
+    - if the word has only 1 letter
+    - if the word has only 2 letters
+    - if the word has more than 2 letters
+
+Load() Function: loads dictionary into memory, returning true if successful else false
+    Open dictionary file
+    if input file cannot be read, exit the program
+
+    Read strings from file one at a time
+
+    Create a new node for each word
+
+    Repeat until the end of the dictionary file
+        Create a new node for each word and make sure it's not null
+
+        Copy the word into the new node
+        Set the *next in the node to NULL
+
+        Hash the word to obtain the hash value (bucket index)
+
+        Insert the node into hash table at that location
+        If that bucket is Null, set it to the first node in that bucket
+        Otherwise,
+            point the new node to the 1st node in bucket,
+            point bucket to the new node
+
+    close dictionary file
+    free the word memory allocation
+
+Size() Fuction: Returns number of words in dictionary if loaded else 0 if not yet loaded
+    Initialise the counter to 0
+
+    For each bucket
+        Create a tmp node, move it to the next until it's null
+            Each time, increment the counter by 1
+    Return counter
+
+unload() Function: Unloads dictionary from memory, returning true if successful else false
+(NOTE: pseudocode uses tmp, while code uses table[i] pointer)
+    Loop all buckets
+        if bucket is not NULL
+            create a tmp node, point the 1st node in bucket
+            create a cursor node, point the 2st node in bucket
+            repeat until the cursor node is NULL
+                free tmp node
+                set tmp = cursor
+                move cursor node to the next node
+                if cursor is NULL
+                    free tmp node
+    After successully reload all dictionary, return true

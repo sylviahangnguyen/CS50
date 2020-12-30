@@ -1,0 +1,33 @@
+# import.py
+
+import libraries
+
+give access to students.db
+
+check command-line arguments (2)
+
+open CSV file given by command-line argument
+    read CSV file
+    for each row
+        extract first, middle and last names from name for 2 cases:
+        - if length of words in name >= 3: middle_name is not None
+        - else: middle_name is None
+
+        insert each student's infor into the students table of student.db, using execute method and ? placeholder
+
+# roster.py
+
+import libraries
+
+give access to students.db
+
+check command-line arguments (2)
+
+check whether the house name is correct
+
+select columns from the table "students", store the data in rows,
+with conditions of house name, order by last name
+
+for each row
+    if the middle name is NULL in database, print only first + last, birthyear
+    if the middle name is not NULL in database, print first + middle + last, birthyear
